@@ -1,18 +1,15 @@
 package sss.com.fragments;
 
-import android.content.Context;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
-public class WednesdayFragment extends Fragment {
+
+public class WednesdayFragment extends BaseFragment {
 
     @Nullable
     @Override
@@ -23,5 +20,10 @@ public class WednesdayFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+    }
+
+    @Override
+    public String getTitle() {
+        return "Wed";
     }
 }
