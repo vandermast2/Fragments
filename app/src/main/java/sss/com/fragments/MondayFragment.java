@@ -41,6 +41,7 @@ public class MondayFragment extends BaseFragment {
         rvList.setLayoutManager(new LinearLayoutManager(getContext()));
 
         rvList.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
 
 
     }
