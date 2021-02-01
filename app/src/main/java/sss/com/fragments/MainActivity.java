@@ -26,7 +26,15 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.containerLay);
         tabLayout = findViewById(R.id.tabLayout);
 
-        adapter = new MyViewPagerAdapter(getSupportFragmentManager(), Arrays.asList(new MondayFragment(), new ThusdayFragment(), new WednesdayFragment()));
+        adapter = new MyViewPagerAdapter(getSupportFragmentManager(),
+                Arrays.asList(
+                        new SundayFragment(),
+                        new MondayFragment(),
+                        new TuesdayFragment(),
+                        new WednesdayFragment(),
+                        new ThursdayFragment(),
+                        new FridayFragment(),
+                        new SaturdayFragment()));
 
         viewPager.setAdapter(adapter);
 
