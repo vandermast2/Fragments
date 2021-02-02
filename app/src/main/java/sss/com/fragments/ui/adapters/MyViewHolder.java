@@ -1,4 +1,4 @@
-package sss.com.fragments.adapters;
+package sss.com.fragments.ui.adapters;
 
 import android.view.View;
 import android.widget.TextView;

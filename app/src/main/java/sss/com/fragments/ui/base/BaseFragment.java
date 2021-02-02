@@ -1,4 +1,4 @@
-package sss.com.fragments;
+package sss.com.fragments.ui.base;
 
 import androidx.fragment.app.Fragment;
 

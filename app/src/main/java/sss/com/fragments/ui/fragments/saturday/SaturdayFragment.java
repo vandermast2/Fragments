@@ -1,4 +1,4 @@
-package sss.com.fragments;
+package sss.com.fragments.ui.fragments.saturday;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,13 +8,16 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import sss.com.fragments.R;
+import sss.com.fragments.ui.base.BaseFragment;
 
-public class SundayFragment extends BaseFragment {
+
+public class SaturdayFragment extends BaseFragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_sunday,container,false);
+        return inflater.inflate(R.layout.fragment_saturday,container,false);
     }
 
     @Override
@@ -24,6 +27,6 @@ public class SundayFragment extends BaseFragment {
 
     @Override
     public String getTitle() {
-        return "Sun";
+        return "Sat";
     }
 }

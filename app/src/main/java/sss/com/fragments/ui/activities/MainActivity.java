@@ -1,4 +1,4 @@
-package sss.com.fragments;
+package sss.com.fragments.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
@@ -10,6 +10,16 @@ import android.util.Log;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.Arrays;
+
+import sss.com.fragments.ui.fragments.friday.FridayFragment;
+import sss.com.fragments.ui.fragments.monday.MondayFragment;
+import sss.com.fragments.ui.adapters.MyViewPagerAdapter;
+import sss.com.fragments.R;
+import sss.com.fragments.ui.fragments.saturday.SaturdayFragment;
+import sss.com.fragments.ui.fragments.sunday.SundayFragment;
+import sss.com.fragments.ui.fragments.thursday.ThursdayFragment;
+import sss.com.fragments.ui.fragments.tuesday.TuesdayFragment;
+import sss.com.fragments.ui.fragments.wednesday.WednesdayFragment;
 
 public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;

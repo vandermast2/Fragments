@@ -1,4 +1,4 @@
-package sss.com.fragments;
+package sss.com.fragments.ui.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -7,6 +7,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.List;
+
+import sss.com.fragments.ui.base.BaseFragment;
 
 public class MyViewPagerAdapter extends FragmentPagerAdapter {
 
