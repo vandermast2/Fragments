@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,10 +28,15 @@ public class MondayFragment extends BaseFragment {
     private RecyclerView rvList;
     private MyRVAdapter adapter;
 
+    private Button btnAdd, btnDel;
+
+    private ArrayList<RecipeModel> list;
+    private final MyRVAdapter.OnItemClick listener = this::delete;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_monday,container,false);
+        return inflater.inflate(R.layout.fragment_monday, container, false);
     }
 
     @Override
@@ -38,12 +44,35 @@ public class MondayFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
 
         rvList = view.findViewById(R.id.rvList);
-        adapter = new MyRVAdapter(generateRecipes());
+
+        btnAdd = view.findViewById(R.id.btnAdd);
+        btnDel = view.findViewById(R.id.btnDelete);
+
+        btnDel.setOnClickListener(v -> delete());
+
+        btnAdd.setOnClickListener(v -> add());
+        list = (ArrayList<RecipeModel>) generateRecipes();
+        adapter = new MyRVAdapter(list, listener);
 
         rvList.setLayoutManager(new LinearLayoutManager(getContext()));
 
         rvList.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+    }
+
+    private void delete(RecipeModel model){
+        adapter.notifyItemRemoved(list.indexOf(model));
+        list.remove(model);
+    }
+
+    private void delete() {
+        adapter.notifyItemRemoved(list.size() - 1);
+        list.remove(list.size() - 1);
+    }
+
+    private void add() {
+        adapter.notifyItemInserted(0);
+        list.add(0,new RecipeModel("Title", "Description"));
     }
 
     @Override
